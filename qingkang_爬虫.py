@@ -8,10 +8,10 @@ from bs4 import BeautifulSoup
 import os
 import re
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36','Host':'www.qk6.org',}
-link = 'https://www.qk6.org/shuku/1_0_0_1_0_0_0_0_'
 Path = 'E:\\Program\\Python\\test\\'
 i = 1
 for n in list(range(1,2)):
+        link = 'https://www.qk6.org/shuku/1_0_0_1_0_0_0_0_'
 	print('第'	+	str(n)	+	'页:')
 	Link = link + str(n) + '.html'
 	resposen = requests.get(Link,headers=headers)

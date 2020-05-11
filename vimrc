@@ -31,19 +31,37 @@ set softtabstop=4  ""tab键的实际占有空格数，统一缩进
 call plug#begin('~/.vim/Plugin')
 "HTML插件
 Plug 'mattn/emmet-vim'
+
 "自动补全插件
 "Plug 'Valloric/YouCompleteMe'
+
 "Markdown
 Plug 'plasticboy/vim-markdown'
+
 "目录树  
 Plug 'scrooloose/nerdtree'
+
 "Python 自动补全
 "Plug 'davidhalter/jedi-vim'
-"Plug 'artur-shaik/vim-javacomplete2'
+
+"在启动窗口显示最近打开的文件
+Plug 'mhinz/vim-startify'
 
 "代码格式化
 "Plug 'Chiel92/vim-autoformat'
-"call plug#end()
+
+"用于显示css中定义的颜色
+Plug 'ap/vim-css-color'
+
+
+
+
+
+
+call plug#end()
+
+
+
 "autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 "YouCompleteMe插件配置
@@ -146,7 +164,7 @@ func SetTitle()
 		call setline(6, "\#       @date         : ".strftime("%Y/%m/%d %H:%M"))
 		call setline(7, "if __name__ == '__main__':") 
 	endif
-  autocmd BufNewFile * normal G
+    autocmd BufNewFile * normal G
 endfunc 
 
 
@@ -189,6 +207,9 @@ nmap <leader>f :find<cr>
 map <F1> :NERDTreeMirror<CR>
 map <F1> :NERDTreeToggle<CR>
 
+"F2代码格式化
+map <F2> gg=G
+
 
 "===========================
 "vim-autoformat插件：
@@ -205,6 +226,3 @@ map <F1> :NERDTreeToggle<CR>
 
 
 
-" 我的状态行显示的内容（包括文件类型和解码）
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-"set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
